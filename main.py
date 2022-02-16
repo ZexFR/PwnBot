@@ -5,20 +5,20 @@ import asyncio
 import time
 import os
 
-nagger = commands.Bot(command_prefix = ">")
-nagger.remove_command('help')
+PwnBot = commands.Bot(command_prefix = ">")
+PwnBot.remove_command('help')
 intents = discord.Intents.default()
 intents.members = True
 
 
-@nagger.event
+@PwnBot.event
 async def on_ready():   
-    await nagger.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"over Sem Wrld"))
+    await PwnBot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"over Sem Wrld"))
 print("Logged in.")
 
 
 
-@nagger.command()
+@PwnBot.command()
 async def webhost(ctx,word):
     list = []
     with open("webhost.txt") as openfile:
@@ -34,7 +34,7 @@ async def webhost(ctx,word):
     await ctx.send(file=discord.File("result.txt"))
     os.remove("result.txt")
 
-@nagger.command()
+@PwnBot.command()
 async def fivepx(ctx,word):
     list = []
     with open("500px.txt") as openfile:
@@ -50,7 +50,7 @@ async def fivepx(ctx,word):
     await ctx.send(file=discord.File("result.txt"))
     os.remove("result.txt")
 
-@nagger.command()
+@PwnBot.command()
 async def eighttracks(ctx,word):
     list = []
     with open("8track.txt") as openfile:
@@ -66,7 +66,7 @@ async def eighttracks(ctx,word):
     await ctx.send(file=discord.File("result.txt"))
     os.remove("result.txt")
 
-@nagger.command()
+@PwnBot.command()
 async def abandonia(ctx,word):
     list = []
     with open("abandonia.txt") as openfile:
@@ -82,7 +82,7 @@ async def abandonia(ctx,word):
     await ctx.send(file=discord.File("result.txt"))
     os.remove("result.txt")
 
-@nagger.command()
+@PwnBot.command()
 async def epicgames(ctx,word):
     list = []
     with open("epicgames.txt") as openfile:
@@ -101,7 +101,7 @@ async def epicgames(ctx,word):
 
 
 
-@nagger.command()
+@PwnBot.command()
 async def imgur(ctx,word):
     list = []
     with open("imgur.txt") as openfile:
@@ -117,7 +117,7 @@ async def imgur(ctx,word):
     await ctx.send(file=discord.File("result.txt"))
     os.remove("result.txt")
 
-@nagger.command(pass_context=True)
+@PwnBot.command(pass_context=True)
 async def help(ctx):
     author = ctx.message.author
 
@@ -136,7 +136,7 @@ async def help(ctx):
     
     await ctx.channel.send(embed=embed)
 
-@nagger.command()
+@PwnBot.command()
 async def whitepages(ctx,word):
     list = []
     with open("white.txt") as openfile:
@@ -152,7 +152,7 @@ async def whitepages(ctx,word):
     await ctx.send(file=discord.File("result.txt"))
     os.remove("result.txt")
 
-@nagger.command()
+@PwnBot.command()
 async def search(ctx,word):
     list = []
     with open("all.txt") as openfile:
@@ -170,4 +170,4 @@ async def search(ctx,word):
 
 
 
-nagger.run("OTAyOTM4MDEzNzYyNDU3Njcx.YXlsjg.JhaSCD0SulemU_68Qbn3UCO9pC0")
+PwnBot.run("OTAyOTM4MDEzNzYyNDU3Njcx.YXlsjg.JhaSCD0SulemU_68Qbn3UCO9pC0")
